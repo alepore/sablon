@@ -131,6 +131,8 @@ module Sablon
         @builder.emit ListParagraph.new(@definition.style, ast_text(node.children), @definition.numid, @builder.ilvl)
       elsif node.text?
         # SKIP?
+      elsif node.name == 'hr'
+        # skip
       else
         raise ArgumentError, "Don't know how to handle node: #{node.inspect}"
       end
